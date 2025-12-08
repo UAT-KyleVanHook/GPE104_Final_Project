@@ -27,6 +27,13 @@ public class PlayerController : Controller
             pawn.MoveRight();
 
         }
+        //If key is released remove most of the velocity of the pawn 
+        if (Input.GetKeyUp(KeyCode.D))
+        {
+            PlayerPawn tempPawn = pawn.GetComponent<PlayerPawn>();
+            tempPawn.DragLinearVelocityX();
+        }
+
 
         //If the A key is pressed down, tell the player pawn to move left
         if (Input.GetKey(KeyCode.A))
@@ -34,6 +41,12 @@ public class PlayerController : Controller
             //go into the pawn and move the player to the left
             pawn.MoveLeft();
 
+        }
+        //If key is released remove most of the velocity of the pawn 
+        if (Input.GetKeyUp(KeyCode.A))
+        {
+            PlayerPawn tempPawn = pawn.GetComponent<PlayerPawn>();
+            tempPawn.DragLinearVelocityX();
         }
 
 

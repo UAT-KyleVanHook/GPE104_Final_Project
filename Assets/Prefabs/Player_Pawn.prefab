@@ -12,8 +12,10 @@ GameObject:
   - component: {fileID: 6383816718359077065}
   - component: {fileID: 8988113504819937366}
   - component: {fileID: 3312621834401416799}
-  - component: {fileID: 8437329140539706831}
   - component: {fileID: 8682478286417576472}
+  - component: {fileID: -7466022258048020479}
+  - component: {fileID: 8725202801794406119}
+  - component: {fileID: -7984084096013562721}
   m_Layer: 0
   m_Name: Player_Pawn
   m_TagString: Player
@@ -108,16 +110,16 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 2
-  m_AngularDamping: 5
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_AngularDamping: 10
+  m_GravityScale: 2
+  m_Material: {fileID: 6200000, guid: a9638a8bce48d244d9becf1a010b34a9, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 1
+  m_Interpolate: 2
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
@@ -158,52 +160,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.011777997}
   m_Size: {x: 1.2222222, y: 1.3097774}
   m_Direction: 0
---- !u!61 &8437329140539706831
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 531157983462059493}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: -0.005416751, y: -0.6679145}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.2222222, y: 1.2777778}
-    newSize: {x: 1.2222222, y: 1.3333334}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 0.85750306, y: 0.05092287}
-  m_EdgeRadius: 0
 --- !u!114 &8682478286417576472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,9 +172,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0992dfd3727478c40817fbba6b484d27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerPawn
+  healthComp: {fileID: 0}
+  deathComp: {fileID: 0}
   rigidBody2d: {fileID: 0}
   jumpCollider: {fileID: 0}
-  moveSpeed: 0.05
-  maxSpeed: 10
-  jumpForce: 50
-  bIsJumping: 0
+  spriteRenderer: {fileID: 0}
+  moveSpeed: 0.5
+  maxSpeed: 8
+  jumpForce: 12
+  dragAmount: 0.5
+  boxSize: {x: 0.85, y: 0.06}
+  boxAngle: 0
+  castDistance: 0.67
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!114 &-7466022258048020479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531157983462059493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce206571cfa1b4647842d8f5161b52ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealthComponent
+  currentHealth: 4
+  maxHealth: 4
+--- !u!114 &8725202801794406119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531157983462059493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 786e77d55e627d5498b207f2e2e4959a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DeathDestroy
+--- !u!81 &-7984084096013562721
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531157983462059493}
+  m_Enabled: 1

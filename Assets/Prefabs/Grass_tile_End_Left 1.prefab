@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3005524316636038559}
   - component: {fileID: 2123117212249687537}
   - component: {fileID: 1385100260371672476}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grass_tile_End_Left 1
   m_TagString: Platform
   m_Icon: {fileID: 0}

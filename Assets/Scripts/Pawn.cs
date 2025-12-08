@@ -3,10 +3,11 @@ using UnityEngine;
 public abstract class Pawn : MonoBehaviour
 {
     [Header("Components")]
-    //public HealthComponent health;
-    //public DeathComponent death;
+    public HealthComponent healthComp;
+    public DeathComponent deathComp;
     public Rigidbody2D rigidBody2d;
     public BoxCollider2D jumpCollider;
+    public SpriteRenderer spriteRenderer;
 
     [Header("Movement")]
     //pawn jump speed
@@ -17,8 +18,6 @@ public abstract class Pawn : MonoBehaviour
     //pawn jump force
     public float jumpForce;
     
-    //bool to detect if the pawn is jumping
-    public bool bIsJumping;
 
 
     public abstract void MoveRight();
