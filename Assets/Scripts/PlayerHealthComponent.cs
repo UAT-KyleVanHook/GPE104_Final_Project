@@ -1,16 +1,27 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealthComponent : HealthComponent
 {
+    //variables for the attached health bar in the UI canvas
+    public Slider healthBarSlider;
+    public TextMeshProUGUI healthBarTextValue;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        healthBarTextValue.text = currentHealth.ToString() + "/" + maxHealth.ToString();
+
+        healthBarSlider.value = currentHealth;
+        healthBarSlider.maxValue = maxHealth;
 
     }
 
@@ -21,11 +32,17 @@ public class PlayerHealthComponent : HealthComponent
 
         currentHealth = currentHealth - amount;
 
+
         //if object isn't alive, set health to zero and tell it to die.
         if (!isAlive())
         {
 
             currentHealth = 0;
+
+            //set this here to make it so the zero value shows up on the health bar
+            healthBarSlider.value = currentHealth;
+            healthBarTextValue.text = currentHealth.ToString() + "/" + maxHealth.ToString();
+
             Die();
         }
 

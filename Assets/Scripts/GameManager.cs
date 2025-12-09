@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        //chekc that there is only one instance of gameManager in this game.
+        //check that there is only one instance of gameManager in this game.
         if (instance == null)
         {
             instance = this;
@@ -33,6 +33,10 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         
+        //Make sure that tihs object is not destroyed on a scen load
+        GameObject.DontDestroyOnLoad(this.gameObject);
+
+
     }
 
     // Update is called once per frame

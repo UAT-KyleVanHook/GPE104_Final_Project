@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4992420078961071726}
   - component: {fileID: 7726197847339486798}
   - component: {fileID: 5465893235581623299}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Grass_Corner_Left
   m_TagString: Platform
   m_Icon: {fileID: 0}

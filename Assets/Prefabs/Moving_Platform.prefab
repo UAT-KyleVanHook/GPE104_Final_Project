@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3976854666572910807}
   - component: {fileID: 3289253789813716278}
   - component: {fileID: 3996765377984318142}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4756411485561898072}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Moving_Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4550048103704649193}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PointB
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
@@ -227,7 +227,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6278231153681101208}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PointA
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}

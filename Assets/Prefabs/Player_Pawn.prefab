@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 3312621834401416799}
   - component: {fileID: 8682478286417576472}
   - component: {fileID: -7466022258048020479}
-  - component: {fileID: 8725202801794406119}
   - component: {fileID: -7984084096013562721}
+  - component: {fileID: 8918060723407043198}
   m_Layer: 0
   m_Name: Player_Pawn
   m_TagString: Player
@@ -180,13 +180,13 @@ MonoBehaviour:
   moveSpeed: 0.5
   maxSpeed: 8
   jumpForce: 12
-  dragAmount: 0.5
+  dragAmount: 0.4
   boxSize: {x: 0.85, y: 0.06}
   boxAngle: 0
   castDistance: 0.67
   groundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 8
 --- !u!114 &-7466022258048020479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,18 +201,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealthComponent
   currentHealth: 4
   maxHealth: 4
---- !u!114 &8725202801794406119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 531157983462059493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 786e77d55e627d5498b207f2e2e4959a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DeathDestroy
+  healthBarSlider: {fileID: 0}
+  healthBarTextValue: {fileID: 0}
 --- !u!81 &-7984084096013562721
 AudioListener:
   m_ObjectHideFlags: 0
@@ -221,3 +211,15 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 531157983462059493}
   m_Enabled: 1
+--- !u!114 &8918060723407043198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531157983462059493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0124d663befa40e4fbdaea34737aac9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDeath

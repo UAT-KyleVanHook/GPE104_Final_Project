@@ -11,14 +11,27 @@ public class UIManager : MonoBehaviour
     public TMP_Text livesText;
     int currentPlayerLives;
 
-    //bool bTimeRanOut = false;
+    public static UIManager instance;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //start the timer
-        //GameManager.instance.resetTimer();
+
+        //check that there is not another instance of UIManager currently in the level. 
+        //If we don't have a PlayerInstance, set this instance as the current instance. Otherwise, destroy the other instance.
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        //don't destroy object on scene load
+        GameObject.DontDestroyOnLoad(gameObject);
+
 
         //set initial texts
         scoreText.text = "Score:";

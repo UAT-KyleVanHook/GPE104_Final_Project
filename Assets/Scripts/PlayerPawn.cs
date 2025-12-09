@@ -10,9 +10,25 @@ public class PlayerPawn : Pawn
     public float castDistance;
     public LayerMask groundLayer;
 
+    public static PlayerPawn playerInstance;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
+        //check that there is not another instance of PlayerPawn currently in the level. 
+        //If we don't have a PlayerInstance, set this instance as the current instance. Otherwise, destroy the other instance.
+        if (playerInstance == null)
+        {
+            playerInstance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        //don't destroy object on scene load
+        GameObject.DontDestroyOnLoad(gameObject);
 
 
         //get health componnt

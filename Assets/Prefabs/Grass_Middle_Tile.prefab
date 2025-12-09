@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5117108201510285776}
   - component: {fileID: 1585783480110823796}
   - component: {fileID: 404824309840172098}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Grass_Middle_Tile
   m_TagString: Platform
   m_Icon: {fileID: 0}

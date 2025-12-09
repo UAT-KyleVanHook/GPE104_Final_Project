@@ -14,7 +14,7 @@ public class FallingPlatform : MonoBehaviour
     void Start()
     {
 
-        //get the rigidbady2D form gameObject
+        //get the rigidbody2D form gameObject
         rb2D = gameObject.GetComponent<Rigidbody2D>();
         
     }
