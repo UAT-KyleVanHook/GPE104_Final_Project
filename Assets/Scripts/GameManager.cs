@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,7 +14,11 @@ public class GameManager : MonoBehaviour
     [Header("Lives")]
     public int playerLives;
 
+    //variable to get the players transform for level loading
+    public Transform layerEndLevelTransform;
 
+    //variable to keep track of the player
+    public PlayerPawn playerPawn;
 
     void Awake()
     {
@@ -32,9 +37,6 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
-        //Make sure that tihs object is not destroyed on a scen load
-        GameObject.DontDestroyOnLoad(this.gameObject);
 
 
     }
@@ -42,6 +44,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log("GameManager PlayerPawn:" + playerPawn);
     }
 }

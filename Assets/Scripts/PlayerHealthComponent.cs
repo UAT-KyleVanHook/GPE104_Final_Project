@@ -5,23 +5,25 @@ using UnityEngine.UI;
 public class PlayerHealthComponent : HealthComponent
 {
     //variables for the attached health bar in the UI canvas
-    public Slider healthBarSlider;
-    public TextMeshProUGUI healthBarTextValue;
+    //public Slider healthBarSlider;
+    //public TextMeshProUGUI healthBarTextValue;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         currentHealth = maxHealth;
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        healthBarTextValue.text = currentHealth.ToString() + "/" + maxHealth.ToString();
+        //healthBarTextValue.text = currentHealth.ToString() + "/" + maxHealth.ToString();
 
-        healthBarSlider.value = currentHealth;
-        healthBarSlider.maxValue = maxHealth;
+        //get the current health and max health over to the UIManager
+        UIManager.instance.currentHealth = currentHealth;
+        UIManager.instance.maxHealth = maxHealth;
 
     }
 
@@ -40,8 +42,8 @@ public class PlayerHealthComponent : HealthComponent
             currentHealth = 0;
 
             //set this here to make it so the zero value shows up on the health bar
-            healthBarSlider.value = currentHealth;
-            healthBarTextValue.text = currentHealth.ToString() + "/" + maxHealth.ToString();
+            UIManager.instance.currentHealth = currentHealth;
+            UIManager.instance.maxHealth = maxHealth;
 
             Die();
         }

@@ -6,7 +6,7 @@ public abstract class Pawn : MonoBehaviour
     public HealthComponent healthComp;
     public DeathComponent deathComp;
     public Rigidbody2D rigidBody2d;
-    public BoxCollider2D jumpCollider;
+    //public BoxCollider2D jumpCollider;
     public SpriteRenderer spriteRenderer;
 
     [Header("Movement")]

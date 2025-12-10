@@ -26,6 +26,9 @@ public class GoToNextLevel : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             SceneManager.LoadScene(nextLevel);
+
+            //get the players transform to help reset them on the next level.
+            GameManager.instance.layerEndLevelTransform = collision.gameObject.transform;
         }
     }
 }

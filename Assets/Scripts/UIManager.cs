@@ -1,17 +1,27 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-   // public Image TimerImage;
+    public static UIManager instance;
 
+
+    [Header("Score")]
     public TMP_Text scoreText;
     int currentScore;
 
+    [Header("Lives")]
     public TMP_Text livesText;
     int currentPlayerLives;
 
-    public static UIManager instance;
+    [Header("Health")]
+    public TMP_Text healthText;
+    public Slider healthBarSlider;
+    public int currentHealth;
+    public int maxHealth;
+
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -47,7 +57,7 @@ public class UIManager : MonoBehaviour
     void Update()
     {
 
-        //UpdateTimer();
+        UpdateHealth();
 
         UpdateScoreText();
 
@@ -76,6 +86,23 @@ public class UIManager : MonoBehaviour
     //    }
 
     //}
+
+
+    //update the values and slider of the healthbar on the UI
+    void UpdateHealth()
+    {
+
+        //update healthbar slider, getting box its current health and max health
+        healthBarSlider.value = currentHealth;
+        healthBarSlider.maxValue = maxHealth;
+
+        //set the text to the current value
+        healthText.text = currentHealth.ToString() + "/" + maxHealth.ToString();
+
+
+    }
+
+
 
     //update the score of the UI Manager score text
     void UpdateScoreText()

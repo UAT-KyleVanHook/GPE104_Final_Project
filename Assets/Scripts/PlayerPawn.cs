@@ -4,13 +4,18 @@ public class PlayerPawn : Pawn
 {
     public float dragAmount;
 
+
     [Header("BoxCast")]
     public Vector2 boxSize;
     public float boxAngle;
     public float castDistance;
     public LayerMask groundLayer;
 
+
+
+    //only use this to allow the object to transition between scenes.
     public static PlayerPawn playerInstance;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,7 +33,10 @@ public class PlayerPawn : Pawn
         }
 
         //don't destroy object on scene load
-        GameObject.DontDestroyOnLoad(gameObject);
+        GameObject.DontDestroyOnLoad(this.gameObject);
+
+        //Gamemanager already gets this from the SpawnPlayer script.
+        //GameManager.instance.playerPawn = this;
 
 
         //get health componnt
@@ -42,9 +50,6 @@ public class PlayerPawn : Pawn
 
         //get sprite renderer for the player pawn
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-
-        //TODO:change this when spawning the player later.
-        //GameManager.instance.playerPawn = this;
 
     }
 
@@ -82,8 +87,6 @@ public class PlayerPawn : Pawn
             rigidBody2d.AddForce(transform.right * moveSpeed, ForceMode2D.Impulse);
 
         }
-        //get the right vector and multiply it by the movespeed. Time.Deltatime is not needed as force accounts for it.
-        //rigidBody2d.AddForce(transform.right * moveSpeed, ForceMode2D.Impulse);
 
        
     }
@@ -103,9 +106,6 @@ public class PlayerPawn : Pawn
             rigidBody2d.AddForce(-transform.right * moveSpeed, ForceMode2D.Impulse);
 
         }
-
-        //get the left vector and multiply it by the movespeed. Time.Deltatime is not needed as force accounts for it.
-        //rigidBody2d.AddForce(-transform.right * moveSpeed, ForceMode2D.Impulse);
 
     }
 
