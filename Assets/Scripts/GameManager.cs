@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+        GameObject.DontDestroyOnLoad(gameObject);
+
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

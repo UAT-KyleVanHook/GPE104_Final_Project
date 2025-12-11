@@ -47,8 +47,11 @@ public class SpawnPlayer : MonoBehaviour
                 PlayerPawn pawnComponent = tempPawn.GetComponent<PlayerPawn>();
                 if (pawnComponent != null)
                 {
-                    controllerToConnect.pawn = pawnComponent;
+                    //controllerToConnect.pawn = pawnComponent;
 
+                    //Use the Controller singleton to connect the pawnComponent to the controller
+                    //We need to do this as on a level load, the PlayerCotntroller that is alreadty in the level gets deleted, meaning there is no Controller connected to the player on a new respawn.
+                    PlayerController.instance.pawn = pawnComponent;
 
                     //set tempPawn to playerpawn in GameManager 
                     GameManager.instance.playerPawn = pawnComponent;
