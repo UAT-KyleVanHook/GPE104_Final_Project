@@ -13,12 +13,6 @@ public class CamFollowPlayer : MonoBehaviour
     void Awake()
     {
 
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
         //check that there is not another instance of CamFollowPlayer currently in the level. 
         //If we don't have a PlayerInstance, set this instance as the current instance. Otherwise, destroy the other instance.
         if (instance == null)
@@ -29,9 +23,29 @@ public class CamFollowPlayer : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
+
         //don't destroy object on scene load
         GameObject.DontDestroyOnLoad(gameObject);
+
+    }
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+
+        ////check that there is not another instance of CamFollowPlayer currently in the level. 
+        ////If we don't have a PlayerInstance, set this instance as the current instance. Otherwise, destroy the other instance.
+        //if (instance == null)
+        //{
+        //    instance = this;
+        //}
+        //else
+        //{
+        //    Destroy(gameObject);
+        //}
+        
+        ////don't destroy object on scene load
+        //GameObject.DontDestroyOnLoad(gameObject);
 
         //NOTE:Make sure that the playerController is empty as for some reason if it has an object assigned to control at the start of game, the camera will not work.
 

@@ -4,7 +4,7 @@ public class DamageOnOverLap : MonoBehaviour
 {
     public bool isInstaKill;
     public int damageDone;
-    public float scoreAmount;
+    //public int scoreAmount;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -21,10 +21,6 @@ public class DamageOnOverLap : MonoBehaviour
 
     void OnDestroy()
     {
-        //Remove this DamageOnOverlap from the GameManager's List. It is dead and destroyed. Update the score.
-        //GameManager.instance.score += scoreAmount;
-        //GameManager.instance.damageZones.Remove(this);
-
 
     }
 

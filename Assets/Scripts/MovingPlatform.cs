@@ -5,8 +5,10 @@ public class MovingPlatform : MonoBehaviour
     public Transform pointA;
     public Transform pointB;
 
+    //move speed
     public float moveSpeed;
 
+    //next position the object should move towards
     private Vector3 nextPosition;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

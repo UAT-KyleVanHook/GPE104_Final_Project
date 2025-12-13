@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2327293341731800641}
   - component: {fileID: 3517015727692444103}
   - component: {fileID: 7127883811377154838}
-  - component: {fileID: -5523935038332535376}
+  - component: {fileID: -1824280235832128103}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -334335624, guid: dae960c392be05c4cb549f3b8b071028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -129,7 +129,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.8888889, y: 0.8888889}
   m_Direction: 0
---- !u!114 &-5523935038332535376
+--- !u!114 &-1824280235832128103
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,7 +138,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 5280593999401182608}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff07dd4e1b67c38448915cc9237c3e06, type: 3}
+  m_Script: {fileID: 11500000, guid: bc496b045fe779440a67f6e0149aef1f, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AddScore
-  scoreAmount: 50
+  m_EditorClassIdentifier: Assembly-CSharp::CollectCoin
+  scoreAmount: 10
+  coinClip: {fileID: 0}

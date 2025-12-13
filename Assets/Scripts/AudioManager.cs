@@ -8,14 +8,20 @@ public class AudioManager : MonoBehaviour
 
 
     [Header("SoundClips")]
-    public AudioClip jumpingSound;
-  
+    public AudioClip jumpingSoundClip;
+    public AudioClip keyCollectionSoundClip;
+    public AudioClip coinCollectionSoundClip;
+    public AudioClip gemCollectionSoundClip;
+    public AudioClip springSoundClip;
+    public AudioClip backgroundMusicClip;
+    public AudioClip playerDamageClip;
+    public AudioClip switchSoundClip;
 
-    [Header("Audio Sources")]
-    public AudioSource backgroundMusicSource;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    //[Header("Audio Sources")]
+   // public AudioSource backgroundMusicSource;
+
+    void Awake()
     {
 
         //check that there is not another instance of UIManager currently in the level. 
@@ -31,6 +37,18 @@ public class AudioManager : MonoBehaviour
 
         //don't destroy object on scene load
         GameObject.DontDestroyOnLoad(gameObject);
+
+
+        //backgroundMusicSource.clip = backgroundMusicClip;
+        //backgroundMusicSource.Play();
+
+    }
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+
+
 
     }
 

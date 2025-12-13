@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6508858710292713990}
   - component: {fileID: 9094161048004132562}
   - component: {fileID: 6906441207775732635}
-  - component: {fileID: -8191618111052020325}
+  - component: {fileID: -2087051545861371276}
   m_Layer: 0
   m_Name: Gem
   m_TagString: Untagged
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 512893218, guid: dae960c392be05c4cb549f3b8b071028, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -129,7 +129,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.8888889, y: 0.8888889}
   m_Direction: 0
---- !u!114 &-8191618111052020325
+--- !u!114 &-2087051545861371276
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,7 +138,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 3154112323125083680}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff07dd4e1b67c38448915cc9237c3e06, type: 3}
+  m_Script: {fileID: 11500000, guid: 46f17e0a527096e4eae473707f30c0d7, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AddScore
-  scoreAmount: 100
+  m_EditorClassIdentifier: Assembly-CSharp::CollectGem
+  scoreAmount: 50
+  gemClip: {fileID: 0}

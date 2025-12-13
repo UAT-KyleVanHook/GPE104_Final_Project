@@ -11,7 +11,9 @@ public class PlayerPawn : Pawn
     public float castDistance;
     public LayerMask groundLayer;
 
-
+    [Header("Audio")]
+    public AudioSource playerAudioSource;
+    public AudioClip jumpClip;
 
     //only use this to allow the object to transition between scenes.
     public static PlayerPawn playerInstance;
@@ -38,6 +40,8 @@ public class PlayerPawn : Pawn
         //Gamemanager already gets this from the SpawnPlayer script.
         //GameManager.instance.playerPawn = this;
 
+        jumpClip = AudioManager.instance.jumpingSoundClip;
+
 
         //get health componnt
         healthComp = gameObject.GetComponent<HealthComponent>();
@@ -51,6 +55,9 @@ public class PlayerPawn : Pawn
         //get sprite renderer for the player pawn
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 
+
+        //get the audio source for the player pawn
+        playerAudioSource = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -119,6 +126,10 @@ public class PlayerPawn : Pawn
         {
 
             Debug.Log("Jumping");
+
+            //play jump clip
+            playerAudioSource.PlayOneShot(jumpClip);
+
 
             //add force to the pawns vertical transform, multiplied by the jump force.
             //Time.Deltatime is not needed as force accounts for it.

@@ -12,13 +12,19 @@ public class ForLoopSpawn : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public Sprite newSprite;
 
+    public AudioClip switchClip;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 
+
+
         //set bIsButtonPressed to false
         bIsButtonPressed = false;
+
+        switchClip = AudioManager.instance.switchSoundClip;
 
     }
 
@@ -66,6 +72,9 @@ public class ForLoopSpawn : MonoBehaviour
 
             //set the current sprite to the new Sprite
             spriteRenderer.sprite = newSprite;
+
+            //play sound clip
+            AudioSource.PlayClipAtPoint(switchClip, transform.position);
 
         }
 

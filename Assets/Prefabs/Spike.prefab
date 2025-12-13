@@ -152,4 +152,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DamageOnOverLap
   isInstaKill: 1
   damageDone: 1
-  scoreAmount: 0

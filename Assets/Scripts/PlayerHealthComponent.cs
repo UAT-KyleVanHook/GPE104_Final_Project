@@ -8,10 +8,14 @@ public class PlayerHealthComponent : HealthComponent
     //public Slider healthBarSlider;
     //public TextMeshProUGUI healthBarTextValue;
 
+    public AudioClip hurtSound;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         currentHealth = maxHealth;
+
+        hurtSound =  AudioManager.instance.playerDamageClip;
 
     }
 
@@ -30,7 +34,7 @@ public class PlayerHealthComponent : HealthComponent
     public override void TakeDamage(int amount)
     {
 
-        //AudioSource.PlayClipAtPoint(GameManager.instance.shipHurtSounds, transform.position);
+        AudioSource.PlayClipAtPoint(hurtSound, transform.position);
 
         currentHealth = currentHealth - amount;
 

@@ -33,7 +33,7 @@ public class SpawnPlayer : MonoBehaviour
 
     public void SpawnNewPlayer()
     {
-        if (GameManager.instance.playerLives > 0)
+        if (GameManager.instance.playerLives != 0)
         {
 
             GameObject tempPawn;
