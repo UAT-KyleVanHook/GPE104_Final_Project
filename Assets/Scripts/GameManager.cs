@@ -36,8 +36,7 @@ public class GameManager : MonoBehaviour
 
         GameObject.DontDestroyOnLoad(gameObject);
 
-        //keeps tracks of the lives the player starts out with.
-        resetLives = playerLives;
+        
 
     }
 
@@ -45,7 +44,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
 
-
+        //keeps tracks of the lives the player starts out with.
+        resetLives = playerLives;
     }
 
     // Update is called once per frame
@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
     {
         //Debug.Log("GameManager PlayerPawn:" + playerPawn);
 
-        if(playerLives == 0)
+        if(playerLives <= 0)
         {
             Lose();
         }
@@ -63,19 +63,42 @@ public class GameManager : MonoBehaviour
     {
 
         //TODO: increment score for persictant score
+        if (score > PlayerPrefs.GetFloat("HighScore"))
+        {
 
+            //set current score to playerPrefs HighScore
+            PlayerPrefs.SetFloat("HighScore", score);
 
-        ////destroy all instace objects so they don't appear in the next scene
-        //Destroy(UIManager.instance.gameObject);
-        //Destroy(PlayerPawn.playerInstance.gameObject);
-        //Destroy(PlayerController.instance.gameObject);
-        //Destroy(CamFollowPlayer.instance.gameObject);
-        //Destroy(PlayerPawn.playerInstance.gameObject);
+        }
 
+        //reset player lives
         playerLives = resetLives;
+
+        //reset player score
+        score = 0;
 
         //load Lose scene
         SceneManager.LoadScene("LoseScene");
       
+    }
+
+    public void Win()
+    {
+
+        //TODO: increment score for persictant score
+        if (score > PlayerPrefs.GetFloat("HighScore"))
+        {
+
+            //set current score to playerPrefs HighScore
+            PlayerPrefs.SetFloat("HighScore", score);
+
+        }
+
+        //reset player lives
+        playerLives = resetLives;
+
+        //reset player score
+        score = 0;
+
     }
 }

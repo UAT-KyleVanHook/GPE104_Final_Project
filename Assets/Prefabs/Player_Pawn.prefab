@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8918060723407043198}
   - component: {fileID: -7896507653317459878}
   - component: {fileID: -6349263302345073148}
+  - component: {fileID: -5262736458916913554}
   - component: {fileID: 4097154703268771576}
   m_Layer: 0
   m_Name: Player_Pawn
@@ -187,6 +188,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  playerAudioSource: {fileID: 0}
+  jumpClip: {fileID: 0}
 --- !u!114 &8918060723407043198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,6 +216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealthComponent
   currentHealth: 4
   maxHealth: 4
+  hurtSound: {fileID: 0}
 --- !u!114 &-6349263302345073148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,6 +229,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f80340dc7e3eb44a9a9bc50d9233bd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoNotDestroyOnLoad
+--- !u!95 &-5262736458916913554
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531157983462059493}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4ec03f54177371e4d919cbef3d561cd0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!82 &4097154703268771576
 AudioSource:
   m_ObjectHideFlags: 0

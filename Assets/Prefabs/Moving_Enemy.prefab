@@ -130,7 +130,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.009221345}
+  m_Offset: {x: 0.0031501055, y: -0.031272143}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -140,7 +140,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.4444444, y: 1.1482241}
+  m_Size: {x: 1.3331401, y: 1.1041224}
   m_EdgeRadius: 0
 --- !u!114 &6225734649855584518
 MonoBehaviour:
@@ -297,7 +297,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.009926885, y: -0.46399152}
+  m_Offset: {x: 0.009926707, y: -0.46399152}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -307,7 +307,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.3841183, y: 0.072016954}
+  m_Size: {x: 1.6491325, y: 0.072016954}
   m_EdgeRadius: 0
 --- !u!114 &5248183313683707275
 MonoBehaviour:
@@ -363,7 +363,7 @@ GameObject:
   - component: {fileID: 2197973124454792143}
   m_Layer: 0
   m_Name: Moving_Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

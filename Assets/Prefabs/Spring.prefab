@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5499037513741596031}
   - component: {fileID: 1518591404637094243}
   - component: {fileID: 8667183299851465137}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Spring
-  m_TagString: Platform
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -149,9 +149,9 @@ GameObject:
   - component: {fileID: 239273936357490178}
   - component: {fileID: 5543988739867600688}
   - component: {fileID: 2720212178932310212}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Jump_Box
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -233,5 +233,5 @@ MonoBehaviour:
   extendedSprite: {fileID: 1384975383, guid: dae960c392be05c4cb549f3b8b071028, type: 3}
   normalSprite: {fileID: 26920706, guid: dae960c392be05c4cb549f3b8b071028, type: 3}
   resetWait: 0.5
-  launchForce: 25
+  launchForce: 30
   springClip: {fileID: 0}

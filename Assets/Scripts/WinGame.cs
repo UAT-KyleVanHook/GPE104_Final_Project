@@ -27,15 +27,9 @@ public class WinGame : MonoBehaviour
 
             if (tempPawn != null)
             {
+                //go to the game manager and set the highscor to player prefs, reset lives, and reset score.
+                GameManager.instance.Win();
 
-                //destroy all instace objects so they don't appear in the next scene
-                //Destroy(UIManager.instance.gameObject);
-                //Destroy(GameManager.instance.gameObject);
-                //Destroy(PlayerPawn.playerInstance.gameObject);
-                //Destroy(PlayerController.instance.gameObject);
-                //Destroy(CamFollowPlayer.instance.gameObject);
-
-                GameManager.instance.playerLives = GameManager.instance.resetLives;
                 //load win scene
                 SceneManager.LoadScene("WinScene");
 

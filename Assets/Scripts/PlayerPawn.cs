@@ -4,6 +4,9 @@ public class PlayerPawn : Pawn
 {
     public float dragAmount;
 
+    //only use this to allow the object to transition between scenes.
+    public static PlayerPawn playerInstance;
+
 
     [Header("BoxCast")]
     public Vector2 boxSize;
@@ -15,8 +18,8 @@ public class PlayerPawn : Pawn
     public AudioSource playerAudioSource;
     public AudioClip jumpClip;
 
-    //only use this to allow the object to transition between scenes.
-    public static PlayerPawn playerInstance;
+
+    private Animator animatorComp;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -58,6 +61,9 @@ public class PlayerPawn : Pawn
 
         //get the audio source for the player pawn
         playerAudioSource = gameObject.GetComponent<AudioSource>();
+
+        //get the animator of the pawn
+        animatorComp = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -86,6 +92,8 @@ public class PlayerPawn : Pawn
         //set limits on how much velocity the player pawn amy gain in the right direction
         if (rigidBody2d.linearVelocityX < maxSpeed)
         {
+            //set the animator bool IsRunning to true
+            animatorComp.SetBool("IsRunning", true);
 
             //flip sprite to the right
             spriteRenderer.flipX = true;
@@ -94,8 +102,15 @@ public class PlayerPawn : Pawn
             rigidBody2d.AddForce(transform.right * moveSpeed, ForceMode2D.Impulse);
 
         }
+        else
+        {
 
-       
+            //set the animator bool IsRunning to false
+            animatorComp.SetBool("IsRunning", false);
+
+        }
+
+
     }
 
     //Move the pawn left
@@ -105,12 +120,21 @@ public class PlayerPawn : Pawn
         //set limits on how much velocity the player pawn may gain in the left direction
         if (rigidBody2d.linearVelocityX > maxSpeed * -1)
         {
+            //set the animator bool IsRunning to true
+            animatorComp.SetBool("IsRunning", true);
 
             //flip sprite to the left
             spriteRenderer.flipX = false;
 
             //get the right vector and multiply it by the movespeed. Time.Deltatime is not needed as force accounts for it.
             rigidBody2d.AddForce(-transform.right * moveSpeed, ForceMode2D.Impulse);
+
+        }
+        else
+        {
+
+            //set the animator bool IsRunning to false
+            animatorComp.SetBool("IsRunning", false);
 
         }
 

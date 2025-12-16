@@ -4,11 +4,15 @@ using UnityEngine;
 public class FallingPlatform : MonoBehaviour
 {
     public float fallWait;
-    public float destroyWait;
+    //public float destroyWait;
+    public float respawnWait;
 
     bool bIsFalling;
 
     Rigidbody2D rb2D;
+
+    //transform of the starting block
+    private Vector2 startLocation;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,7 +20,10 @@ public class FallingPlatform : MonoBehaviour
 
         //get the rigidbody2D form gameObject
         rb2D = gameObject.GetComponent<Rigidbody2D>();
-        
+
+        startLocation = transform.position;
+
+
     }
 
     // Update is called once per frame
@@ -46,7 +53,24 @@ public class FallingPlatform : MonoBehaviour
         //set the rigidbody type to dynamic, making it affected by gravity
         rb2D.bodyType = RigidbodyType2D.Dynamic;
 
+
         //wait a few seconds before destroying the object
-        Destroy(gameObject, destroyWait);
+        //Destroy(gameObject, destroyWait);
+
+
+
+        //wait before reseting the vector position
+        yield return new WaitForSeconds(respawnWait);
+
+        //reset the gameObjects rigidBody3D type
+        //set the rigidbody type to dynamic, making it affected by gravity
+        rb2D.bodyType = RigidbodyType2D.Static;
+
+        //reset bIsFalling to false
+        bIsFalling = false;
+
+        //reset gameObject transform
+        gameObject.transform.position = startLocation;  
+
     }
 }

@@ -11,7 +11,8 @@ public class SpringJumpBox : MonoBehaviour
     [Header ("Values")]
     //int for the reset timer for the spring
     public float resetWait;
-    public int launchForce;
+    public float launchForce;
+    //public float launchMultiplier;
 
     [Header("Audio")]
     public AudioClip springClip;
@@ -51,7 +52,7 @@ public class SpringJumpBox : MonoBehaviour
             //check that the player object is jumping, we use the grounded function in the player pawn. 
             //If it is false, then they are jumping/ in the air and we want to allow this to happpen.
             //We also check that the playerPawns linear velocity in the y axis is in the negatives.
-            if (!playPawn.IsGrounded() && play2DBody.linearVelocityY < 0)
+            if (!playPawn.IsGrounded()) //&& play2DBody.linearVelocityY < 0
             {
 
                 AudioSource.PlayClipAtPoint(springClip, transform.position);

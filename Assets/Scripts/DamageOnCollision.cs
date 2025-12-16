@@ -1,7 +1,6 @@
-using System.Collections;
 using UnityEngine;
 
-public class DamageOnOverLap : MonoBehaviour
+public class DamageOnCollision : MonoBehaviour
 {
     public bool isInstaKill;
 
@@ -27,7 +26,7 @@ public class DamageOnOverLap : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         //get healthComponenet
         HealthComponent otherHealth = other.gameObject.GetComponent<HealthComponent>();
@@ -43,7 +42,7 @@ public class DamageOnOverLap : MonoBehaviour
 
                 if (otherDeath != null)
                 {
-                   
+
                     otherHealth.Die();
 
                 }
@@ -60,5 +59,6 @@ public class DamageOnOverLap : MonoBehaviour
         }
 
     }
+
 
 }
