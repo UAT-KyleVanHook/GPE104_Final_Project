@@ -214,8 +214,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce206571cfa1b4647842d8f5161b52ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealthComponent
-  currentHealth: 4
-  maxHealth: 4
+  currentHealth: 3
+  maxHealth: 3
   hurtSound: {fileID: 0}
 --- !u!114 &-6349263302345073148
 MonoBehaviour:
