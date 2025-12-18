@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class StompableEnemyOverlap : MonoBehaviour
 {
+    //clip fro squash sound
+    public AudioClip squishClip;
 
     //Make sure this component is on it own seperate child trigger box, if you wish to do a Mario Goomba stomp for example.
 
@@ -9,8 +11,7 @@ public class StompableEnemyOverlap : MonoBehaviour
     void Start()
     {
 
-
-
+        squishClip = AudioManager.instance.squishSoundClip;
     }
 
     // Update is called once per frame
@@ -49,6 +50,9 @@ public class StompableEnemyOverlap : MonoBehaviour
                 overlap.damageDone = 0;
 
                 DeathComponent deathComp = gameObject.GetComponentInParent<DeathComponent>();
+
+                //play squish sound effect
+                AudioSource.PlayClipAtPoint(squishClip, transform.position);
 
                 deathComp.Die();
 

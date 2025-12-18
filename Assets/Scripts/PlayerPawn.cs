@@ -102,13 +102,13 @@ public class PlayerPawn : Pawn
             rigidBody2d.AddForce(transform.right * moveSpeed, ForceMode2D.Impulse);
 
         }
-        else
-        {
+        //else
+        //{
 
-            //set the animator bool IsRunning to false
-            animatorComp.SetBool("IsRunning", false);
+        //    //set the animator bool IsRunning to false
+        //    animatorComp.SetBool("IsRunning", false);
 
-        }
+        //}
 
 
     }
@@ -130,13 +130,13 @@ public class PlayerPawn : Pawn
             rigidBody2d.AddForce(-transform.right * moveSpeed, ForceMode2D.Impulse);
 
         }
-        else
-        {
+        //else
+        //{
 
-            //set the animator bool IsRunning to false
-            animatorComp.SetBool("IsRunning", false);
+        //    //set the animator bool IsRunning to false
+        //    animatorComp.SetBool("IsRunning", false);
 
-        }
+        //}
 
     }
 
@@ -198,6 +198,10 @@ public class PlayerPawn : Pawn
     {
 
         rigidBody2d.linearVelocityX *= dragAmount;
+
+        //set the animator bool IsRunning to false
+        animatorComp.SetBool("IsRunning", false);
+
 
     }
 

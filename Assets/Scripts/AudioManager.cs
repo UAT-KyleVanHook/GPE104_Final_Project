@@ -16,10 +16,11 @@ public class AudioManager : MonoBehaviour
     public AudioClip backgroundMusicClip;
     public AudioClip playerDamageClip;
     public AudioClip switchSoundClip;
+    public AudioClip squishSoundClip;
 
 
     //[Header("Audio Sources")]
-   // public AudioSource backgroundMusicSource;
+    // public AudioSource backgroundMusicSource;
 
     void Awake()
     {
